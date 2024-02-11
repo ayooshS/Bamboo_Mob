@@ -243,7 +243,7 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                                             .typeHigh,
                                         size: 12.0,
                                       ),
-                                      isDisabled: true,
+                                      isDisabled: false,
                                     ),
                                   ),
                                   wrapWithModel(
@@ -257,7 +257,7 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                                             .typeHigh,
                                         size: 16.0,
                                       ),
-                                      isDisabled: true,
+                                      isDisabled: false,
                                     ),
                                   ),
                                   wrapWithModel(
@@ -271,7 +271,7 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                                             .typeHigh,
                                         size: 20.0,
                                       ),
-                                      isDisabled: true,
+                                      isDisabled: false,
                                     ),
                                   ),
                                 ],
