@@ -1,7 +1,6 @@
-import '/button/md_btn/md_btn_default/md_btn_default_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/navigation/nav_bottom/nav_bottom/nav_bottom_widget.dart';
+import '/navigation/bottom_nav/bottom_nav/bottom_nav_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'source_model.dart';
@@ -69,22 +68,16 @@ class _SourceWidgetState extends State<SourceWidget> {
           top: true,
           child: Stack(
             children: [
-              Column(
+              const Column(
                 mainAxisSize: MainAxisSize.max,
-                children: [
-                  wrapWithModel(
-                    model: _model.mdBtnDefaultModel,
-                    updateCallback: () => setState(() {}),
-                    child: const MdBtnDefaultWidget(),
-                  ),
-                ],
+                children: [],
               ),
               Align(
                 alignment: const AlignmentDirectional(0.0, 1.0),
                 child: wrapWithModel(
-                  model: _model.navBottomModel,
+                  model: _model.bottomNavModel,
                   updateCallback: () => setState(() {}),
-                  child: const NavBottomWidget(
+                  child: const BottomNavWidget(
                     selectedPageIndex: 3,
                     hiddenNav: false,
                   ),

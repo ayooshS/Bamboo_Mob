@@ -1,6 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/navigation/nav_bottom/nav_bottom/nav_bottom_widget.dart';
+import '/navigation/bottom_nav/bottom_nav/bottom_nav_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'finance_model.dart';
@@ -71,9 +71,9 @@ class _FinanceWidgetState extends State<FinanceWidget> {
               Align(
                 alignment: const AlignmentDirectional(0.0, 1.0),
                 child: wrapWithModel(
-                  model: _model.navBottomModel,
+                  model: _model.bottomNavModel,
                   updateCallback: () => setState(() {}),
-                  child: const NavBottomWidget(
+                  child: const BottomNavWidget(
                     selectedPageIndex: 2,
                     hiddenNav: false,
                   ),

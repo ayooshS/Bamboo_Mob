@@ -1,7 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/navigation/top_nav/top_nav_icon/initials/initials_widget.dart';
+import '/navigation/top_nav/top_nav_object/initials/initials_widget.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'top_nav_default_model.dart';

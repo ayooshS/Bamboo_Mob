@@ -1,5 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/navigation/top_nav/top_nav_icon/initials/initials_widget.dart';
+import '/navigation/top_nav/top_nav_object/initials/initials_widget.dart';
 import 'top_nav_default_widget.dart' show TopNavDefaultWidget;
 import 'package:flutter/material.dart';
 

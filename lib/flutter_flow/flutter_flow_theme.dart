@@ -32,28 +32,36 @@ abstract class FlutterFlowTheme {
   late Color error;
   late Color info;
 
-  late Color corePrimary;
-  late Color coreVariant;
-  late Color coreError;
-  late Color coreSuccess;
-  late Color coreWarning;
-  late Color coreAccent;
+  late Color nextPrimary;
+  late Color nextError;
+  late Color nextSuccess;
+  late Color nextWarning;
+  late Color nextAccent;
   late Color surfaceBackground;
   late Color surfaceBackgroundGlass;
   late Color surfaceOverlay;
   late Color typeHigh;
   late Color typeMedium;
   late Color typeLow;
+  late Color elevation01;
+  late Color elevation02;
+  late Color elevation06;
+  late Color elevation08;
   late Color inputBorder;
   late Color inputBackground;
-  late Color elevation01dp;
-  late Color elevation02dp;
   late Color buttonDisabled;
-  late Color buttonBezeledGrey;
+  late Color buttonGrey;
   late Color buttonOverlay;
   late Color buttonColor;
-  late Color primaryWhite;
-  late Color pPrimary;
+  late Color infoPrimary;
+  late Color infoError;
+  late Color infoSuccess;
+  late Color infoWarning;
+  late Color infoAccent;
+  late Color transparent;
+  late Color corePrimary;
+  late Color elevation01dp;
+  late Color elevation02dp;
   late Color btnColor;
 
   @Deprecated('Use displaySmallFamily instead')
@@ -144,28 +152,36 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFFF5963);
   late Color info = const Color(0xFFFFFFFF);
 
-  late Color corePrimary = const Color(0xFF0486FF);
-  late Color coreVariant = const Color(0xFF02539E);
-  late Color coreError = const Color(0xFFE53E3E);
-  late Color coreSuccess = const Color(0xFF00C356);
-  late Color coreWarning = const Color(0xFFFF8B00);
-  late Color coreAccent = const Color(0xFFA305E5);
+  late Color nextPrimary = const Color(0xFF0486FF);
+  late Color nextError = const Color(0xFFE53E3E);
+  late Color nextSuccess = const Color(0xFF00C356);
+  late Color nextWarning = const Color(0xFFFF8B00);
+  late Color nextAccent = const Color(0xFFA305E5);
   late Color surfaceBackground = const Color(0xFFFFFFFF);
   late Color surfaceBackgroundGlass = const Color(0x99FFFFFF);
   late Color surfaceOverlay = const Color(0xCCFFFFFF);
   late Color typeHigh = const Color(0xFF4E596B);
   late Color typeMedium = const Color(0xFF5B687D);
   late Color typeLow = const Color(0xFF818C9E);
+  late Color elevation01 = const Color(0xFFF7F8FB);
+  late Color elevation02 = const Color(0xFFEAEEF4);
+  late Color elevation06 = const Color(0xFF58C822);
+  late Color elevation08 = const Color(0xFF8F2D9B);
   late Color inputBorder = const Color(0x3FC0C5CF);
   late Color inputBackground = const Color(0xFFF7F8FB);
-  late Color elevation01dp = const Color(0xFFF7F8FB);
-  late Color elevation02dp = const Color(0xFFEAEEF4);
   late Color buttonDisabled = const Color(0x1EFFFFFF);
-  late Color buttonBezeledGrey = const Color(0x11FFFFFF);
+  late Color buttonGrey = const Color(0xFFEAEEF4);
   late Color buttonOverlay = const Color(0x11FFFFFF);
   late Color buttonColor = const Color(0xFFFFFFFF);
-  late Color primaryWhite = const Color(0xFFFFFFFF);
-  late Color pPrimary = const Color(0xFF0486FF);
+  late Color infoPrimary = const Color(0xFFCDE7FF);
+  late Color infoError = const Color(0xFFFED7D7);
+  late Color infoSuccess = const Color(0xFFDEFBE6);
+  late Color infoWarning = const Color(0xFFFFF0B3);
+  late Color infoAccent = const Color(0xFFF2D7FE);
+  late Color transparent = const Color(0x00FFFFFF);
+  late Color corePrimary = const Color(0xFF0486FF);
+  late Color elevation01dp = const Color(0xFFF7F8FB);
+  late Color elevation02dp = const Color(0xFFEAEEF4);
   late Color btnColor = const Color(0xFFFFFFFF);
 }
 
@@ -249,7 +265,7 @@ class ThemeTypography extends Typography {
   String get headlineSmallFamily => 'Nunito';
   TextStyle get headlineSmall => GoogleFonts.getFont(
         'Nunito',
-        color: theme.primaryText,
+        color: theme.typeHigh,
         fontWeight: FontWeight.w600,
         fontSize: 18.0,
         fontStyle: FontStyle.normal,
@@ -273,7 +289,7 @@ class ThemeTypography extends Typography {
   TextStyle get titleSmall => GoogleFonts.getFont(
         'Readex Pro',
         color: theme.typeHigh,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
   String get labelLargeFamily => 'Readex Pro';

@@ -1,7 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/navigation/top_nav/top_nav_icon/icon/icon_widget.dart';
+import '/navigation/top_nav/top_nav_object/icon/icon_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'top_nav_brand_model.dart';
