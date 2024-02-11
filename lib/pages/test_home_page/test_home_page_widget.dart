@@ -22,6 +22,14 @@ import '/button/primary/icon/prim_icon_small/prim_icon_small_widget.dart';
 import '/button/primary/prim_large/prim_large_widget.dart';
 import '/button/primary/prim_medium/prim_medium_widget.dart';
 import '/button/primary/prim_small/prim_small_widget.dart';
+import '/chips_labels/assistive_chips/default/def_left/def_left_widget.dart';
+import '/chips_labels/assistive_chips/default/def_left_disable/def_left_disable_widget.dart';
+import '/chips_labels/assistive_chips/default/def_right/def_right_widget.dart';
+import '/chips_labels/assistive_chips/default/def_right_disable/def_right_disable_widget.dart';
+import '/chips_labels/assistive_chips/elevated/elevated_left_disable/elevated_left_disable_widget.dart';
+import '/chips_labels/assistive_chips/elevated/elevated_light/elevated_light_widget.dart';
+import '/chips_labels/assistive_chips/elevated/elevated_right/elevated_right_widget.dart';
+import '/chips_labels/assistive_chips/elevated/elevated_right_disable/elevated_right_disable_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -92,7 +100,7 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                   alignment: const AlignmentDirectional(0.0, -1.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 64.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 64.0, 16.0, 32.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -491,6 +499,163 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                                     child: const BezLargeWidget(
                                       buttonText: 'Large',
                                       isDisabled: true,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ].divide(const SizedBox(height: 8.0)),
+                          ),
+                          Align(
+                            alignment: const AlignmentDirectional(-1.0, 0.0),
+                            child: Text(
+                              'ChipsAndLabel',
+                              style: FlutterFlowTheme.of(context).displayLarge,
+                            ),
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Align(
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                child: Text(
+                                  'Assistive Chips',
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .override(
+                                        fontFamily: 'Nunito',
+                                        color: FlutterFlowTheme.of(context)
+                                            .typeMedium,
+                                      ),
+                                ),
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  wrapWithModel(
+                                    model: _model.defLeftModel,
+                                    updateCallback: () => setState(() {}),
+                                    child: DefLeftWidget(
+                                      icon: Icon(
+                                        FFIcons.kicFluentFlow32Regular,
+                                        color: FlutterFlowTheme.of(context)
+                                            .typeHigh,
+                                        size: 16.0,
+                                      ),
+                                      labelText: 'DefLeft',
+                                    ),
+                                  ),
+                                  wrapWithModel(
+                                    model: _model.defRightModel,
+                                    updateCallback: () => setState(() {}),
+                                    child: DefRightWidget(
+                                      icon: Icon(
+                                        FFIcons.kicFluentFlow32Regular,
+                                        color: FlutterFlowTheme.of(context)
+                                            .typeHigh,
+                                        size: 16.0,
+                                      ),
+                                      labelText: 'DefRight',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  wrapWithModel(
+                                    model: _model.defLeftDisableModel,
+                                    updateCallback: () => setState(() {}),
+                                    child: DefLeftDisableWidget(
+                                      icon: Icon(
+                                        FFIcons.kicFluentFlow32Regular,
+                                        color: FlutterFlowTheme.of(context)
+                                            .typeLow,
+                                        size: 16.0,
+                                      ),
+                                      labelText: 'DefLeftDisable',
+                                    ),
+                                  ),
+                                  wrapWithModel(
+                                    model: _model.defRightDisableModel,
+                                    updateCallback: () => setState(() {}),
+                                    child: DefRightDisableWidget(
+                                      icon: Icon(
+                                        FFIcons.kicFluentFlow32Regular,
+                                        color: FlutterFlowTheme.of(context)
+                                            .typeLow,
+                                        size: 16.0,
+                                      ),
+                                      labelText: 'DefRightDisable',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  wrapWithModel(
+                                    model: _model.elevatedRightModel,
+                                    updateCallback: () => setState(() {}),
+                                    child: ElevatedRightWidget(
+                                      icon: Icon(
+                                        FFIcons.kicFluentFlow32Regular,
+                                        color: FlutterFlowTheme.of(context)
+                                            .typeHigh,
+                                        size: 16.0,
+                                      ),
+                                      labelText: 'ElevatedRight',
+                                    ),
+                                  ),
+                                  wrapWithModel(
+                                    model: _model.elevatedLightModel,
+                                    updateCallback: () => setState(() {}),
+                                    child: ElevatedLightWidget(
+                                      icon: Icon(
+                                        FFIcons.kicFluentFlow32Regular,
+                                        color: FlutterFlowTheme.of(context)
+                                            .typeHigh,
+                                        size: 16.0,
+                                      ),
+                                      labelText: 'ElevatedLeft',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  wrapWithModel(
+                                    model: _model.elevatedLeftDisableModel,
+                                    updateCallback: () => setState(() {}),
+                                    child: ElevatedLeftDisableWidget(
+                                      icon: Icon(
+                                        FFIcons.kicFluentFlow32Regular,
+                                        color: FlutterFlowTheme.of(context)
+                                            .typeLow,
+                                        size: 16.0,
+                                      ),
+                                      labelText: 'ElevatedLeftDisable',
+                                    ),
+                                  ),
+                                  wrapWithModel(
+                                    model: _model.elevatedRightDisableModel,
+                                    updateCallback: () => setState(() {}),
+                                    child: ElevatedRightDisableWidget(
+                                      icon: Icon(
+                                        FFIcons.kicFluentFlow32Regular,
+                                        color: FlutterFlowTheme.of(context)
+                                            .typeLow,
+                                        size: 16.0,
+                                      ),
+                                      labelText: 'ElevatedRightDisable',
                                     ),
                                   ),
                                 ],

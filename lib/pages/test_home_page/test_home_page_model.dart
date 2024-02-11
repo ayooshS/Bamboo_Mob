@@ -22,6 +22,14 @@ import '/button/primary/icon/prim_icon_small/prim_icon_small_widget.dart';
 import '/button/primary/prim_large/prim_large_widget.dart';
 import '/button/primary/prim_medium/prim_medium_widget.dart';
 import '/button/primary/prim_small/prim_small_widget.dart';
+import '/chips_labels/assistive_chips/default/def_left/def_left_widget.dart';
+import '/chips_labels/assistive_chips/default/def_left_disable/def_left_disable_widget.dart';
+import '/chips_labels/assistive_chips/default/def_right/def_right_widget.dart';
+import '/chips_labels/assistive_chips/default/def_right_disable/def_right_disable_widget.dart';
+import '/chips_labels/assistive_chips/elevated/elevated_left_disable/elevated_left_disable_widget.dart';
+import '/chips_labels/assistive_chips/elevated/elevated_light/elevated_light_widget.dart';
+import '/chips_labels/assistive_chips/elevated/elevated_right/elevated_right_widget.dart';
+import '/chips_labels/assistive_chips/elevated/elevated_right_disable/elevated_right_disable_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'test_home_page_widget.dart' show TestHomePageWidget;
 import 'package:flutter/material.dart';
@@ -78,6 +86,22 @@ class TestHomePageModel extends FlutterFlowModel<TestHomePageWidget> {
   late BezMediumModel bezMediumModel;
   // Model for BezLarge component.
   late BezLargeModel bezLargeModel;
+  // Model for DefLeft component.
+  late DefLeftModel defLeftModel;
+  // Model for DefRight component.
+  late DefRightModel defRightModel;
+  // Model for DefLeftDisable component.
+  late DefLeftDisableModel defLeftDisableModel;
+  // Model for DefRightDisable component.
+  late DefRightDisableModel defRightDisableModel;
+  // Model for ElevatedRight component.
+  late ElevatedRightModel elevatedRightModel;
+  // Model for ElevatedLight component.
+  late ElevatedLightModel elevatedLightModel;
+  // Model for ElevatedLeftDisable component.
+  late ElevatedLeftDisableModel elevatedLeftDisableModel;
+  // Model for ElevatedRightDisable component.
+  late ElevatedRightDisableModel elevatedRightDisableModel;
 
   /// Initialization and disposal methods.
 
@@ -107,6 +131,16 @@ class TestHomePageModel extends FlutterFlowModel<TestHomePageWidget> {
     bezSmallModel = createModel(context, () => BezSmallModel());
     bezMediumModel = createModel(context, () => BezMediumModel());
     bezLargeModel = createModel(context, () => BezLargeModel());
+    defLeftModel = createModel(context, () => DefLeftModel());
+    defRightModel = createModel(context, () => DefRightModel());
+    defLeftDisableModel = createModel(context, () => DefLeftDisableModel());
+    defRightDisableModel = createModel(context, () => DefRightDisableModel());
+    elevatedRightModel = createModel(context, () => ElevatedRightModel());
+    elevatedLightModel = createModel(context, () => ElevatedLightModel());
+    elevatedLeftDisableModel =
+        createModel(context, () => ElevatedLeftDisableModel());
+    elevatedRightDisableModel =
+        createModel(context, () => ElevatedRightDisableModel());
   }
 
   @override
@@ -136,6 +170,14 @@ class TestHomePageModel extends FlutterFlowModel<TestHomePageWidget> {
     bezSmallModel.dispose();
     bezMediumModel.dispose();
     bezLargeModel.dispose();
+    defLeftModel.dispose();
+    defRightModel.dispose();
+    defLeftDisableModel.dispose();
+    defRightDisableModel.dispose();
+    elevatedRightModel.dispose();
+    elevatedLightModel.dispose();
+    elevatedLeftDisableModel.dispose();
+    elevatedRightDisableModel.dispose();
   }
 
   /// Action blocks are added here.
