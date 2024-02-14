@@ -2,11 +2,11 @@ import '/components/type_icon_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'elevated_light_model.dart';
-export 'elevated_light_model.dart';
+import 'elevated_model.dart';
+export 'elevated_model.dart';
 
-class ElevatedLightWidget extends StatefulWidget {
-  const ElevatedLightWidget({
+class ElevatedWidget extends StatefulWidget {
+  const ElevatedWidget({
     super.key,
     this.icon,
     this.labelText,
@@ -16,11 +16,11 @@ class ElevatedLightWidget extends StatefulWidget {
   final String? labelText;
 
   @override
-  State<ElevatedLightWidget> createState() => _ElevatedLightWidgetState();
+  State<ElevatedWidget> createState() => _ElevatedWidgetState();
 }
 
-class _ElevatedLightWidgetState extends State<ElevatedLightWidget> {
-  late ElevatedLightModel _model;
+class _ElevatedWidgetState extends State<ElevatedWidget> {
+  late ElevatedModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -31,7 +31,7 @@ class _ElevatedLightWidgetState extends State<ElevatedLightWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ElevatedLightModel());
+    _model = createModel(context, () => ElevatedModel());
   }
 
   @override

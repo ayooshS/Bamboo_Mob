@@ -1,10 +1,9 @@
 import '/components/type_icon_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'elevated_left_disable_widget.dart' show ElevatedLeftDisableWidget;
+import 'elevated_disable_widget.dart' show ElevatedDisableWidget;
 import 'package:flutter/material.dart';
 
-class ElevatedLeftDisableModel
-    extends FlutterFlowModel<ElevatedLeftDisableWidget> {
+class ElevatedDisableModel extends FlutterFlowModel<ElevatedDisableWidget> {
   ///  State fields for stateful widgets in this component.
 
   // Model for TypeIcon component.

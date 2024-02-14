@@ -1,9 +1,9 @@
 import '/components/type_icon_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'def_right_disable_widget.dart' show DefRightDisableWidget;
+import 'info_default_widget.dart' show InfoDefaultWidget;
 import 'package:flutter/material.dart';
 
-class DefRightDisableModel extends FlutterFlowModel<DefRightDisableWidget> {
+class InfoDefaultModel extends FlutterFlowModel<InfoDefaultWidget> {
   ///  State fields for stateful widgets in this component.
 
   // Model for TypeIcon component.

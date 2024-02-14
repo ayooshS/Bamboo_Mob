@@ -2,11 +2,11 @@ import '/components/type_icon_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'def_left_disable_model.dart';
-export 'def_left_disable_model.dart';
+import 'info_default_model.dart';
+export 'info_default_model.dart';
 
-class DefLeftDisableWidget extends StatefulWidget {
-  const DefLeftDisableWidget({
+class InfoDefaultWidget extends StatefulWidget {
+  const InfoDefaultWidget({
     super.key,
     this.icon,
     this.labelText,
@@ -16,11 +16,11 @@ class DefLeftDisableWidget extends StatefulWidget {
   final String? labelText;
 
   @override
-  State<DefLeftDisableWidget> createState() => _DefLeftDisableWidgetState();
+  State<InfoDefaultWidget> createState() => _InfoDefaultWidgetState();
 }
 
-class _DefLeftDisableWidgetState extends State<DefLeftDisableWidget> {
-  late DefLeftDisableModel _model;
+class _InfoDefaultWidgetState extends State<InfoDefaultWidget> {
+  late InfoDefaultModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -31,7 +31,7 @@ class _DefLeftDisableWidgetState extends State<DefLeftDisableWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => DefLeftDisableModel());
+    _model = createModel(context, () => InfoDefaultModel());
   }
 
   @override
@@ -80,7 +80,7 @@ class _DefLeftDisableWidgetState extends State<DefLeftDisableWidget> {
                     ),
                     style: FlutterFlowTheme.of(context).labelSmall.override(
                           fontFamily: 'Nunito',
-                          color: FlutterFlowTheme.of(context).typeLow,
+                          color: FlutterFlowTheme.of(context).typeHigh,
                         ),
                   ),
                 ].divide(const SizedBox(width: 8.0)),

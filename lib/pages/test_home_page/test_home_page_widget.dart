@@ -22,14 +22,10 @@ import '/button/primary/icon/prim_icon_small/prim_icon_small_widget.dart';
 import '/button/primary/prim_large/prim_large_widget.dart';
 import '/button/primary/prim_medium/prim_medium_widget.dart';
 import '/button/primary/prim_small/prim_small_widget.dart';
-import '/chips_labels/assistive_chips/default/def_left/def_left_widget.dart';
-import '/chips_labels/assistive_chips/default/def_left_disable/def_left_disable_widget.dart';
-import '/chips_labels/assistive_chips/default/def_right/def_right_widget.dart';
-import '/chips_labels/assistive_chips/default/def_right_disable/def_right_disable_widget.dart';
-import '/chips_labels/assistive_chips/elevated/elevated_left_disable/elevated_left_disable_widget.dart';
-import '/chips_labels/assistive_chips/elevated/elevated_light/elevated_light_widget.dart';
-import '/chips_labels/assistive_chips/elevated/elevated_right/elevated_right_widget.dart';
-import '/chips_labels/assistive_chips/elevated/elevated_right_disable/elevated_right_disable_widget.dart';
+import '/chips_labels/assistive_chips/default/def_disable/def_disable_widget.dart';
+import '/chips_labels/assistive_chips/default/info_default/info_default_widget.dart';
+import '/components/elevated_disable_widget.dart';
+import '/components/elevated_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -97,7 +93,7 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, -1.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(16.0, 64.0, 16.0, 32.0),
@@ -145,7 +141,7 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                                             .btnColor,
                                         size: 12.0,
                                       ),
-                                      isDisabled: true,
+                                      isDisabled: false,
                                     ),
                                   ),
                                   wrapWithModel(
@@ -159,7 +155,7 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                                             .buttonColor,
                                         size: 16.0,
                                       ),
-                                      isDisabled: true,
+                                      isDisabled: false,
                                     ),
                                   ),
                                   wrapWithModel(
@@ -173,7 +169,7 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                                             .buttonColor,
                                         size: 20.0,
                                       ),
-                                      isDisabled: true,
+                                      isDisabled: false,
                                     ),
                                   ),
                                 ],
@@ -534,9 +530,9 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   wrapWithModel(
-                                    model: _model.defLeftModel,
+                                    model: _model.infoDefaultModel,
                                     updateCallback: () => setState(() {}),
-                                    child: DefLeftWidget(
+                                    child: InfoDefaultWidget(
                                       icon: Icon(
                                         FFIcons.kicFluentFlow32Regular,
                                         color: FlutterFlowTheme.of(context)
@@ -547,29 +543,9 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                                     ),
                                   ),
                                   wrapWithModel(
-                                    model: _model.defRightModel,
+                                    model: _model.defDisableModel,
                                     updateCallback: () => setState(() {}),
-                                    child: DefRightWidget(
-                                      icon: Icon(
-                                        FFIcons.kicFluentFlow32Regular,
-                                        color: FlutterFlowTheme.of(context)
-                                            .typeHigh,
-                                        size: 16.0,
-                                      ),
-                                      labelText: 'DefRight',
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  wrapWithModel(
-                                    model: _model.defLeftDisableModel,
-                                    updateCallback: () => setState(() {}),
-                                    child: DefLeftDisableWidget(
+                                    child: DefDisableWidget(
                                       icon: Icon(
                                         FFIcons.kicFluentFlow32Regular,
                                         color: FlutterFlowTheme.of(context)
@@ -579,19 +555,6 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                                       labelText: 'DefLeftDisable',
                                     ),
                                   ),
-                                  wrapWithModel(
-                                    model: _model.defRightDisableModel,
-                                    updateCallback: () => setState(() {}),
-                                    child: DefRightDisableWidget(
-                                      icon: Icon(
-                                        FFIcons.kicFluentFlow32Regular,
-                                        color: FlutterFlowTheme.of(context)
-                                            .typeLow,
-                                        size: 16.0,
-                                      ),
-                                      labelText: 'DefRightDisable',
-                                    ),
-                                  ),
                                 ],
                               ),
                               Row(
@@ -600,22 +563,9 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   wrapWithModel(
-                                    model: _model.elevatedRightModel,
+                                    model: _model.elevatedModel,
                                     updateCallback: () => setState(() {}),
-                                    child: ElevatedRightWidget(
-                                      icon: Icon(
-                                        FFIcons.kicFluentFlow32Regular,
-                                        color: FlutterFlowTheme.of(context)
-                                            .typeHigh,
-                                        size: 16.0,
-                                      ),
-                                      labelText: 'ElevatedRight',
-                                    ),
-                                  ),
-                                  wrapWithModel(
-                                    model: _model.elevatedLightModel,
-                                    updateCallback: () => setState(() {}),
-                                    child: ElevatedLightWidget(
+                                    child: ElevatedWidget(
                                       icon: Icon(
                                         FFIcons.kicFluentFlow32Regular,
                                         color: FlutterFlowTheme.of(context)
@@ -625,17 +575,10 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                                       labelText: 'ElevatedLeft',
                                     ),
                                   ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
                                   wrapWithModel(
-                                    model: _model.elevatedLeftDisableModel,
+                                    model: _model.elevatedDisableModel,
                                     updateCallback: () => setState(() {}),
-                                    child: ElevatedLeftDisableWidget(
+                                    child: ElevatedDisableWidget(
                                       icon: Icon(
                                         FFIcons.kicFluentFlow32Regular,
                                         color: FlutterFlowTheme.of(context)
@@ -643,19 +586,6 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                                         size: 16.0,
                                       ),
                                       labelText: 'ElevatedLeftDisable',
-                                    ),
-                                  ),
-                                  wrapWithModel(
-                                    model: _model.elevatedRightDisableModel,
-                                    updateCallback: () => setState(() {}),
-                                    child: ElevatedRightDisableWidget(
-                                      icon: Icon(
-                                        FFIcons.kicFluentFlow32Regular,
-                                        color: FlutterFlowTheme.of(context)
-                                            .typeLow,
-                                        size: 16.0,
-                                      ),
-                                      labelText: 'ElevatedRightDisable',
                                     ),
                                   ),
                                 ],

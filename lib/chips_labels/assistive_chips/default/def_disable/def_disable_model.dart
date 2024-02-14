@@ -1,9 +1,9 @@
 import '/components/type_icon_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'def_left_disable_widget.dart' show DefLeftDisableWidget;
+import 'def_disable_widget.dart' show DefDisableWidget;
 import 'package:flutter/material.dart';
 
-class DefLeftDisableModel extends FlutterFlowModel<DefLeftDisableWidget> {
+class DefDisableModel extends FlutterFlowModel<DefDisableWidget> {
   ///  State fields for stateful widgets in this component.
 
   // Model for TypeIcon component.
@@ -22,6 +22,8 @@ class DefLeftDisableModel extends FlutterFlowModel<DefLeftDisableWidget> {
   }
 
   /// Action blocks are added here.
+
+  Future clickable(BuildContext context) async {}
 
   /// Additional helper methods are added here.
 }

@@ -2,11 +2,11 @@ import '/components/type_icon_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'def_right_disable_model.dart';
-export 'def_right_disable_model.dart';
+import 'elevated_disable_model.dart';
+export 'elevated_disable_model.dart';
 
-class DefRightDisableWidget extends StatefulWidget {
-  const DefRightDisableWidget({
+class ElevatedDisableWidget extends StatefulWidget {
+  const ElevatedDisableWidget({
     super.key,
     this.icon,
     this.labelText,
@@ -16,11 +16,11 @@ class DefRightDisableWidget extends StatefulWidget {
   final String? labelText;
 
   @override
-  State<DefRightDisableWidget> createState() => _DefRightDisableWidgetState();
+  State<ElevatedDisableWidget> createState() => _ElevatedDisableWidgetState();
 }
 
-class _DefRightDisableWidgetState extends State<DefRightDisableWidget> {
-  late DefRightDisableModel _model;
+class _ElevatedDisableWidgetState extends State<ElevatedDisableWidget> {
+  late ElevatedDisableModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -31,7 +31,7 @@ class _DefRightDisableWidgetState extends State<DefRightDisableWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => DefRightDisableModel());
+    _model = createModel(context, () => ElevatedDisableModel());
   }
 
   @override
@@ -51,11 +51,8 @@ class _DefRightDisableWidgetState extends State<DefRightDisableWidget> {
           child: Container(
             height: 20.0,
             decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).transparent,
+              color: FlutterFlowTheme.of(context).elevation02,
               borderRadius: BorderRadius.circular(4.0),
-              border: Border.all(
-                color: FlutterFlowTheme.of(context).inputBorder,
-              ),
             ),
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(8.0, 2.0, 8.0, 2.0),
@@ -63,6 +60,16 @@ class _DefRightDisableWidgetState extends State<DefRightDisableWidget> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  Align(
+                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    child: wrapWithModel(
+                      model: _model.typeIconModel,
+                      updateCallback: () => setState(() {}),
+                      child: TypeIconWidget(
+                        icon: widget.icon!,
+                      ),
+                    ),
+                  ),
                   Text(
                     valueOrDefault<String>(
                       widget.labelText,
@@ -72,13 +79,6 @@ class _DefRightDisableWidgetState extends State<DefRightDisableWidget> {
                           fontFamily: 'Nunito',
                           color: FlutterFlowTheme.of(context).typeLow,
                         ),
-                  ),
-                  wrapWithModel(
-                    model: _model.typeIconModel,
-                    updateCallback: () => setState(() {}),
-                    child: TypeIconWidget(
-                      icon: widget.icon!,
-                    ),
                   ),
                 ].divide(const SizedBox(width: 8.0)),
               ),
