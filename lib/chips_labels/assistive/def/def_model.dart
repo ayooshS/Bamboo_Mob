@@ -1,9 +1,9 @@
-import '/components/type_icon_widget.dart';
+import '/chips_labels/icon_type/type_icon/type_icon_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'elevated_widget.dart' show ElevatedWidget;
+import 'def_widget.dart' show DefWidget;
 import 'package:flutter/material.dart';
 
-class ElevatedModel extends FlutterFlowModel<ElevatedWidget> {
+class DefModel extends FlutterFlowModel<DefWidget> {
   ///  State fields for stateful widgets in this component.
 
   // Model for TypeIcon component.
@@ -22,6 +22,8 @@ class ElevatedModel extends FlutterFlowModel<ElevatedWidget> {
   }
 
   /// Action blocks are added here.
+
+  Future test(BuildContext context) async {}
 
   /// Additional helper methods are added here.
 }

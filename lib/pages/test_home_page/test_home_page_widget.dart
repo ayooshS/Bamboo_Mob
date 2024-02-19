@@ -22,12 +22,14 @@ import '/button/primary/icon/prim_icon_small/prim_icon_small_widget.dart';
 import '/button/primary/prim_large/prim_large_widget.dart';
 import '/button/primary/prim_medium/prim_medium_widget.dart';
 import '/button/primary/prim_small/prim_small_widget.dart';
-import '/chips_labels/assistive_chips/default/def_disable/def_disable_widget.dart';
-import '/chips_labels/assistive_chips/default/info_default/info_default_widget.dart';
-import '/components/elevated_disable_widget.dart';
-import '/components/elevated_widget.dart';
+import '/chips_labels/assistive/clickable/disabled/dsb_default/dsb_default_widget.dart';
+import '/chips_labels/assistive/clickable/disabled/dsb_elevated/dsb_elevated_widget.dart';
+import '/chips_labels/assistive/def/def_widget.dart';
+import '/chips_labels/assistive/elevated/elevated_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/product_list/product_list/product_list_widget.dart';
+import '/progress/horizontal/horizontal_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'test_home_page_model.dart';
@@ -530,39 +532,6 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   wrapWithModel(
-                                    model: _model.infoDefaultModel,
-                                    updateCallback: () => setState(() {}),
-                                    child: InfoDefaultWidget(
-                                      icon: Icon(
-                                        FFIcons.kicFluentFlow32Regular,
-                                        color: FlutterFlowTheme.of(context)
-                                            .typeHigh,
-                                        size: 16.0,
-                                      ),
-                                      labelText: 'DefLeft',
-                                    ),
-                                  ),
-                                  wrapWithModel(
-                                    model: _model.defDisableModel,
-                                    updateCallback: () => setState(() {}),
-                                    child: DefDisableWidget(
-                                      icon: Icon(
-                                        FFIcons.kicFluentFlow32Regular,
-                                        color: FlutterFlowTheme.of(context)
-                                            .typeLow,
-                                        size: 16.0,
-                                      ),
-                                      labelText: 'DefLeftDisable',
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  wrapWithModel(
                                     model: _model.elevatedModel,
                                     updateCallback: () => setState(() {}),
                                     child: ElevatedWidget(
@@ -572,20 +541,258 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                                             .typeHigh,
                                         size: 16.0,
                                       ),
-                                      labelText: 'ElevatedLeft',
+                                      labelText: 'asssitive chip\n',
+                                      color: FlutterFlowTheme.of(context)
+                                          .elevation02,
                                     ),
                                   ),
                                   wrapWithModel(
-                                    model: _model.elevatedDisableModel,
+                                    model: _model.defModel,
                                     updateCallback: () => setState(() {}),
-                                    child: ElevatedDisableWidget(
+                                    child: DefWidget(
+                                      icon: Icon(
+                                        FFIcons.kicFluentFlow32Regular,
+                                        color: FlutterFlowTheme.of(context)
+                                            .typeHigh,
+                                        size: 16.0,
+                                      ),
+                                      labelText: 'assitive chip',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    child: wrapWithModel(
+                                      model: _model.dsbElevatedModel,
+                                      updateCallback: () => setState(() {}),
+                                      child: DsbElevatedWidget(
+                                        icon: Icon(
+                                          FFIcons.kicFluentFlow32Regular,
+                                          color: FlutterFlowTheme.of(context)
+                                              .typeLow,
+                                          size: 16.0,
+                                        ),
+                                        labelText: 'ass Disabled',
+                                      ),
+                                    ),
+                                  ),
+                                  wrapWithModel(
+                                    model: _model.dsbDefaultModel,
+                                    updateCallback: () => setState(() {}),
+                                    child: DsbDefaultWidget(
                                       icon: Icon(
                                         FFIcons.kicFluentFlow32Regular,
                                         color: FlutterFlowTheme.of(context)
                                             .typeLow,
                                         size: 16.0,
                                       ),
-                                      labelText: 'ElevatedLeftDisable',
+                                      labelText: 'ass Disabled',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ].divide(const SizedBox(height: 8.0)),
+                          ),
+                          Align(
+                            alignment: const AlignmentDirectional(-1.0, 0.0),
+                            child: Text(
+                              'Progress',
+                              style: FlutterFlowTheme.of(context).displayLarge,
+                            ),
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Align(
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                child: Text(
+                                  'Horizontal',
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .override(
+                                        fontFamily: 'Nunito',
+                                        color: FlutterFlowTheme.of(context)
+                                            .typeMedium,
+                                      ),
+                                ),
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    child: wrapWithModel(
+                                      model: _model.horizontalModel,
+                                      updateCallback: () => setState(() {}),
+                                      child: HorizontalWidget(
+                                        rightText: 'Iconing ',
+                                        leftTextPrimary: 'Total',
+                                        leftTextSecondary: '/ Something',
+                                        isLeftRow: false,
+                                        isRightRow: true,
+                                        icon: Icon(
+                                          FFIcons.kicFluentFlow32Regular,
+                                          color: FlutterFlowTheme.of(context)
+                                              .typeHigh,
+                                          size: 16.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ].divide(const SizedBox(height: 8.0)),
+                          ),
+                          Align(
+                            alignment: const AlignmentDirectional(-1.0, 0.0),
+                            child: Text(
+                              'Product List',
+                              style: FlutterFlowTheme.of(context).displayLarge,
+                            ),
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Align(
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                child: Text(
+                                  'list card',
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .override(
+                                        fontFamily: 'Nunito',
+                                        color: FlutterFlowTheme.of(context)
+                                            .typeMedium,
+                                      ),
+                                ),
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    child: wrapWithModel(
+                                      model: _model.productListModel,
+                                      updateCallback: () => setState(() {}),
+                                      child: ProductListWidget(
+                                        iconLableOverline: Icon(
+                                          FFIcons.kicFluentFlow32Regular,
+                                          color: FlutterFlowTheme.of(context)
+                                              .typeHigh,
+                                          size: 16.0,
+                                        ),
+                                        headerText: 'Product Name',
+                                        textLabelOverline: 'Label',
+                                        colorLabelOverline:
+                                            FlutterFlowTheme.of(context)
+                                                .infoPrimary,
+                                        headerIcon: Icon(
+                                          FFIcons.kicFluentFlow32Regular,
+                                          color: FlutterFlowTheme.of(context)
+                                              .typeHigh,
+                                          size: 20.0,
+                                        ),
+                                        subText: 'Description',
+                                        trailingMainText: 'Quantity',
+                                        buttonText: 'dssds',
+                                        labelElevIcon1: Icon(
+                                          FFIcons.kicFluentFlow20Regular,
+                                          color: FlutterFlowTheme.of(context)
+                                              .typeHigh,
+                                          size: 16.0,
+                                        ),
+                                        labelElevIcon2: Icon(
+                                          FFIcons.kicFluentFlow20Regular,
+                                          color: FlutterFlowTheme.of(context)
+                                              .typeHigh,
+                                          size: 16.0,
+                                        ),
+                                        labelElevIcon3: Icon(
+                                          FFIcons.kicFluentFlow20Regular,
+                                          color: FlutterFlowTheme.of(context)
+                                              .typeHigh,
+                                          size: 16.0,
+                                        ),
+                                        labelDefIcon1: Icon(
+                                          FFIcons.kicFluentFlow20Regular,
+                                          color: FlutterFlowTheme.of(context)
+                                              .typeHigh,
+                                          size: 16.0,
+                                        ),
+                                        labelDefIcon2: Icon(
+                                          FFIcons.kicFluentFlow20Regular,
+                                          color: FlutterFlowTheme.of(context)
+                                              .typeHigh,
+                                          size: 16.0,
+                                        ),
+                                        labelDefIcon3: Icon(
+                                          FFIcons.kicFluentFlow20Regular,
+                                          color: FlutterFlowTheme.of(context)
+                                              .typeHigh,
+                                          size: 16.0,
+                                        ),
+                                        labelElevText1: 'Label',
+                                        labelElevText2: 'Label',
+                                        labelElevText3: 'Label',
+                                        labelDefText1: 'Label',
+                                        labelDefText2: 'Label',
+                                        labelDefText3: 'Label',
+                                        primButtonText: 'Apply',
+                                        defButtonText: 'Apply',
+                                        primButtonIcon: Icon(
+                                          FFIcons.kicFluentFlow20Regular,
+                                          color: FlutterFlowTheme.of(context)
+                                              .buttonColor,
+                                          size: 16.0,
+                                        ),
+                                        defButtonIcon: Icon(
+                                          FFIcons.kicFluentFlow20Regular,
+                                          color: FlutterFlowTheme.of(context)
+                                              .typeHigh,
+                                          size: 16.0,
+                                        ),
+                                        trailingMetaText: '₹ 5600.03',
+                                        labelShotText: 'Status',
+                                        labelShotColor:
+                                            FlutterFlowTheme.of(context)
+                                                .nextAccent,
+                                        footerIcon1: Icon(
+                                          FFIcons.kicFluentFlow20Regular,
+                                          color: FlutterFlowTheme.of(context)
+                                              .typeLow,
+                                          size: 16.0,
+                                        ),
+                                        footerIcon2: Icon(
+                                          FFIcons.kicFluentFlow20Regular,
+                                          color: FlutterFlowTheme.of(context)
+                                              .typeLow,
+                                          size: 16.0,
+                                        ),
+                                        footerIcon3: Icon(
+                                          FFIcons.kicFluentFlow20Regular,
+                                          color: FlutterFlowTheme.of(context)
+                                              .typeLow,
+                                          size: 16.0,
+                                        ),
+                                        footerText1: 'Label',
+                                        footerText2: 'Label',
+                                        footerText3: 'Label',
+                                        semanticText: 'Semantic',
+                                        semanticColor:
+                                            FlutterFlowTheme.of(context)
+                                                .nextSuccess,
+                                        semanticIconColor:
+                                            FlutterFlowTheme.of(context)
+                                                .nextSuccess,
+                                        isLabelHeader: true,
+                                      ),
                                     ),
                                   ),
                                 ],

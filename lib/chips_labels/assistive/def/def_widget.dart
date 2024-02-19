@@ -1,12 +1,12 @@
-import '/components/type_icon_widget.dart';
+import '/chips_labels/icon_type/type_icon/type_icon_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'elevated_disable_model.dart';
-export 'elevated_disable_model.dart';
+import 'def_model.dart';
+export 'def_model.dart';
 
-class ElevatedDisableWidget extends StatefulWidget {
-  const ElevatedDisableWidget({
+class DefWidget extends StatefulWidget {
+  const DefWidget({
     super.key,
     this.icon,
     this.labelText,
@@ -16,11 +16,11 @@ class ElevatedDisableWidget extends StatefulWidget {
   final String? labelText;
 
   @override
-  State<ElevatedDisableWidget> createState() => _ElevatedDisableWidgetState();
+  State<DefWidget> createState() => _DefWidgetState();
 }
 
-class _ElevatedDisableWidgetState extends State<ElevatedDisableWidget> {
-  late ElevatedDisableModel _model;
+class _DefWidgetState extends State<DefWidget> {
+  late DefModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -31,7 +31,7 @@ class _ElevatedDisableWidgetState extends State<ElevatedDisableWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ElevatedDisableModel());
+    _model = createModel(context, () => DefModel());
   }
 
   @override
@@ -51,8 +51,11 @@ class _ElevatedDisableWidgetState extends State<ElevatedDisableWidget> {
           child: Container(
             height: 20.0,
             decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).elevation02,
+              color: FlutterFlowTheme.of(context).transparent,
               borderRadius: BorderRadius.circular(4.0),
+              border: Border.all(
+                color: FlutterFlowTheme.of(context).inputBorder,
+              ),
             ),
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(8.0, 2.0, 8.0, 2.0),
@@ -77,7 +80,7 @@ class _ElevatedDisableWidgetState extends State<ElevatedDisableWidget> {
                     ),
                     style: FlutterFlowTheme.of(context).labelSmall.override(
                           fontFamily: 'Nunito',
-                          color: FlutterFlowTheme.of(context).typeLow,
+                          color: FlutterFlowTheme.of(context).typeHigh,
                         ),
                   ),
                 ].divide(const SizedBox(width: 8.0)),

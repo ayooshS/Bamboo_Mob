@@ -1,9 +1,9 @@
-import '/components/type_icon_widget.dart';
+import '/chips_labels/icon_type/type_icon/type_icon_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'info_default_widget.dart' show InfoDefaultWidget;
+import 'dsb_elevated_widget.dart' show DsbElevatedWidget;
 import 'package:flutter/material.dart';
 
-class InfoDefaultModel extends FlutterFlowModel<InfoDefaultWidget> {
+class DsbElevatedModel extends FlutterFlowModel<DsbElevatedWidget> {
   ///  State fields for stateful widgets in this component.
 
   // Model for TypeIcon component.

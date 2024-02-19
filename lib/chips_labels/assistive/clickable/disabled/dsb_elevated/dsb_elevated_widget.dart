@@ -1,12 +1,12 @@
-import '/components/type_icon_widget.dart';
+import '/chips_labels/icon_type/type_icon/type_icon_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'def_disable_model.dart';
-export 'def_disable_model.dart';
+import 'dsb_elevated_model.dart';
+export 'dsb_elevated_model.dart';
 
-class DefDisableWidget extends StatefulWidget {
-  const DefDisableWidget({
+class DsbElevatedWidget extends StatefulWidget {
+  const DsbElevatedWidget({
     super.key,
     this.icon,
     this.labelText,
@@ -16,11 +16,11 @@ class DefDisableWidget extends StatefulWidget {
   final String? labelText;
 
   @override
-  State<DefDisableWidget> createState() => _DefDisableWidgetState();
+  State<DsbElevatedWidget> createState() => _DsbElevatedWidgetState();
 }
 
-class _DefDisableWidgetState extends State<DefDisableWidget> {
-  late DefDisableModel _model;
+class _DsbElevatedWidgetState extends State<DsbElevatedWidget> {
+  late DsbElevatedModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -31,7 +31,7 @@ class _DefDisableWidgetState extends State<DefDisableWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => DefDisableModel());
+    _model = createModel(context, () => DsbElevatedModel());
   }
 
   @override
@@ -51,11 +51,8 @@ class _DefDisableWidgetState extends State<DefDisableWidget> {
           child: Container(
             height: 20.0,
             decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).transparent,
+              color: FlutterFlowTheme.of(context).elevation02,
               borderRadius: BorderRadius.circular(4.0),
-              border: Border.all(
-                color: FlutterFlowTheme.of(context).inputBorder,
-              ),
             ),
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(8.0, 2.0, 8.0, 2.0),

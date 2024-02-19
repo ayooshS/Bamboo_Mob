@@ -1,9 +1,9 @@
-import '/components/type_icon_widget.dart';
+import '/chips_labels/icon_type/type_icon/type_icon_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'elevated_disable_widget.dart' show ElevatedDisableWidget;
+import 'dsb_default_widget.dart' show DsbDefaultWidget;
 import 'package:flutter/material.dart';
 
-class ElevatedDisableModel extends FlutterFlowModel<ElevatedDisableWidget> {
+class DsbDefaultModel extends FlutterFlowModel<DsbDefaultWidget> {
   ///  State fields for stateful widgets in this component.
 
   // Model for TypeIcon component.
@@ -22,6 +22,8 @@ class ElevatedDisableModel extends FlutterFlowModel<ElevatedDisableWidget> {
   }
 
   /// Action blocks are added here.
+
+  Future clickable(BuildContext context) async {}
 
   /// Additional helper methods are added here.
 }

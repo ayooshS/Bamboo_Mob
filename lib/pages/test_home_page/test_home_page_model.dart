@@ -22,11 +22,13 @@ import '/button/primary/icon/prim_icon_small/prim_icon_small_widget.dart';
 import '/button/primary/prim_large/prim_large_widget.dart';
 import '/button/primary/prim_medium/prim_medium_widget.dart';
 import '/button/primary/prim_small/prim_small_widget.dart';
-import '/chips_labels/assistive_chips/default/def_disable/def_disable_widget.dart';
-import '/chips_labels/assistive_chips/default/info_default/info_default_widget.dart';
-import '/components/elevated_disable_widget.dart';
-import '/components/elevated_widget.dart';
+import '/chips_labels/assistive/clickable/disabled/dsb_default/dsb_default_widget.dart';
+import '/chips_labels/assistive/clickable/disabled/dsb_elevated/dsb_elevated_widget.dart';
+import '/chips_labels/assistive/def/def_widget.dart';
+import '/chips_labels/assistive/elevated/elevated_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/product_list/product_list/product_list_widget.dart';
+import '/progress/horizontal/horizontal_widget.dart';
 import 'test_home_page_widget.dart' show TestHomePageWidget;
 import 'package:flutter/material.dart';
 
@@ -82,14 +84,18 @@ class TestHomePageModel extends FlutterFlowModel<TestHomePageWidget> {
   late BezMediumModel bezMediumModel;
   // Model for BezLarge component.
   late BezLargeModel bezLargeModel;
-  // Model for InfoDefault component.
-  late InfoDefaultModel infoDefaultModel;
-  // Model for DefDisable component.
-  late DefDisableModel defDisableModel;
   // Model for Elevated component.
   late ElevatedModel elevatedModel;
-  // Model for ElevatedDisable component.
-  late ElevatedDisableModel elevatedDisableModel;
+  // Model for Def component.
+  late DefModel defModel;
+  // Model for DsbElevated component.
+  late DsbElevatedModel dsbElevatedModel;
+  // Model for DsbDefault component.
+  late DsbDefaultModel dsbDefaultModel;
+  // Model for Horizontal component.
+  late HorizontalModel horizontalModel;
+  // Model for ProductList component.
+  late ProductListModel productListModel;
 
   /// Initialization and disposal methods.
 
@@ -119,10 +125,12 @@ class TestHomePageModel extends FlutterFlowModel<TestHomePageWidget> {
     bezSmallModel = createModel(context, () => BezSmallModel());
     bezMediumModel = createModel(context, () => BezMediumModel());
     bezLargeModel = createModel(context, () => BezLargeModel());
-    infoDefaultModel = createModel(context, () => InfoDefaultModel());
-    defDisableModel = createModel(context, () => DefDisableModel());
     elevatedModel = createModel(context, () => ElevatedModel());
-    elevatedDisableModel = createModel(context, () => ElevatedDisableModel());
+    defModel = createModel(context, () => DefModel());
+    dsbElevatedModel = createModel(context, () => DsbElevatedModel());
+    dsbDefaultModel = createModel(context, () => DsbDefaultModel());
+    horizontalModel = createModel(context, () => HorizontalModel());
+    productListModel = createModel(context, () => ProductListModel());
   }
 
   @override
@@ -152,10 +160,12 @@ class TestHomePageModel extends FlutterFlowModel<TestHomePageWidget> {
     bezSmallModel.dispose();
     bezMediumModel.dispose();
     bezLargeModel.dispose();
-    infoDefaultModel.dispose();
-    defDisableModel.dispose();
     elevatedModel.dispose();
-    elevatedDisableModel.dispose();
+    defModel.dispose();
+    dsbElevatedModel.dispose();
+    dsbDefaultModel.dispose();
+    horizontalModel.dispose();
+    productListModel.dispose();
   }
 
   /// Action blocks are added here.

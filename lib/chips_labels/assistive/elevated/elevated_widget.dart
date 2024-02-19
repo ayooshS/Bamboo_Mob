@@ -1,26 +1,28 @@
-import '/components/type_icon_widget.dart';
+import '/chips_labels/icon_type/type_icon/type_icon_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'info_default_model.dart';
-export 'info_default_model.dart';
+import 'elevated_model.dart';
+export 'elevated_model.dart';
 
-class InfoDefaultWidget extends StatefulWidget {
-  const InfoDefaultWidget({
+class ElevatedWidget extends StatefulWidget {
+  const ElevatedWidget({
     super.key,
     this.icon,
     this.labelText,
-  });
+    Color? color,
+  }) : color = color ?? const Color(0xFFEAEEF4);
 
   final Widget? icon;
   final String? labelText;
+  final Color color;
 
   @override
-  State<InfoDefaultWidget> createState() => _InfoDefaultWidgetState();
+  State<ElevatedWidget> createState() => _ElevatedWidgetState();
 }
 
-class _InfoDefaultWidgetState extends State<InfoDefaultWidget> {
-  late InfoDefaultModel _model;
+class _ElevatedWidgetState extends State<ElevatedWidget> {
+  late ElevatedModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -31,7 +33,7 @@ class _InfoDefaultWidgetState extends State<InfoDefaultWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => InfoDefaultModel());
+    _model = createModel(context, () => ElevatedModel());
   }
 
   @override
@@ -45,17 +47,16 @@ class _InfoDefaultWidgetState extends State<InfoDefaultWidget> {
   Widget build(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Align(
           alignment: const AlignmentDirectional(-1.0, 0.0),
           child: Container(
             height: 20.0,
             decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).transparent,
+              color: widget.color,
               borderRadius: BorderRadius.circular(4.0),
-              border: Border.all(
-                color: FlutterFlowTheme.of(context).inputBorder,
-              ),
             ),
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(8.0, 2.0, 8.0, 2.0),
@@ -78,10 +79,7 @@ class _InfoDefaultWidgetState extends State<InfoDefaultWidget> {
                       widget.labelText,
                       'Label',
                     ),
-                    style: FlutterFlowTheme.of(context).labelSmall.override(
-                          fontFamily: 'Nunito',
-                          color: FlutterFlowTheme.of(context).typeHigh,
-                        ),
+                    style: FlutterFlowTheme.of(context).labelSmall,
                   ),
                 ].divide(const SizedBox(width: 8.0)),
               ),
