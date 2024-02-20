@@ -49,8 +49,8 @@ class _ProductOverviewWidgetState extends State<ProductOverviewWidget> {
             decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: Image.network(
-                  'https://images.unsplash.com/photo-1605600659873-d808a13e4d2a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw1fHxzdGVlbHxlbnwwfHx8fDE3MDg0MjM4NzJ8MA&ixlib=rb-4.0.3&q=80&w=1080',
+                image: Image.asset(
+                  'assets/images/Alloy-wire-rod_Background_Removed.png',
                 ).image,
               ),
               borderRadius: BorderRadius.circular(8.0),
