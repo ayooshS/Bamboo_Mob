@@ -10,11 +10,13 @@ class LabelShotLargeWidget extends StatefulWidget {
     this.icon,
     this.labelText,
     Color? color,
+    this.colorText,
   }) : color = color ?? const Color(0xFFEAEEF4);
 
   final Widget? icon;
   final String? labelText;
   final Color color;
+  final Color? colorText;
 
   @override
   State<LabelShotLargeWidget> createState() => _LabelShotLargeWidgetState();
@@ -75,7 +77,10 @@ class _LabelShotLargeWidgetState extends State<LabelShotLargeWidget> {
                     widget.labelText,
                     'Label',
                   ),
-                  style: FlutterFlowTheme.of(context).bodySmall,
+                  style: FlutterFlowTheme.of(context).bodySmall.override(
+                        fontFamily: 'Nunito',
+                        color: widget.colorText,
+                      ),
                 ),
               ].divide(const SizedBox(width: 8.0)),
             ),

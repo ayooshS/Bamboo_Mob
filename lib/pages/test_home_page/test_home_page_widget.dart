@@ -26,8 +26,10 @@ import '/chips_labels/assistive/clickable/disabled/dsb_default/dsb_default_widge
 import '/chips_labels/assistive/clickable/disabled/dsb_elevated/dsb_elevated_widget.dart';
 import '/chips_labels/assistive/def/def_widget.dart';
 import '/chips_labels/assistive/elevated/elevated_widget.dart';
+import '/components/bank_card_large_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/navigation/bottom_nav/bottom_nav/bottom_nav_widget.dart';
 import '/product_list/product_list/product_list_widget.dart';
 import '/progress/horizontal/horizontal_widget.dart';
 import 'package:flutter/material.dart';
@@ -683,7 +685,7 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                                       updateCallback: () => setState(() {}),
                                       child: ProductListWidget(
                                         iconLableOverline: Icon(
-                                          FFIcons.kicFluentFlow32Regular,
+                                          Icons.onetwothree_sharp,
                                           color: FlutterFlowTheme.of(context)
                                               .typeHigh,
                                           size: 16.0,
@@ -762,7 +764,7 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                                         labelShotText: 'Status',
                                         labelShotColor:
                                             FlutterFlowTheme.of(context)
-                                                .nextAccent,
+                                                .tertiary,
                                         footerIcon1: Icon(
                                           FFIcons.kicFluentFlow20Regular,
                                           color: FlutterFlowTheme.of(context)
@@ -792,6 +794,82 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                                             FlutterFlowTheme.of(context)
                                                 .nextSuccess,
                                         isLabelHeader: true,
+                                        isSemantic: false,
+                                        isMore: false,
+                                        isHeaderIcon: true,
+                                        isHeaderText: true,
+                                        isSubText: false,
+                                        isTrailingText: false,
+                                        isPrimaryButton: false,
+                                        isPrimaryButtonIcon: true,
+                                        isDefaultButton: false,
+                                        isDefaultButtonIcon: false,
+                                        isTrailingMeta: true,
+                                        isLabelElev1: true,
+                                        isLabelElev2: false,
+                                        isLabelElev3: false,
+                                        isLabelDef1: true,
+                                        isLabelDef2: true,
+                                        isLabelDef3: false,
+                                        isLabelshot: true,
+                                        isFooter1: true,
+                                        isFooter2: true,
+                                        isFooter3: false,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ].divide(const SizedBox(height: 8.0)),
+                          ),
+                          Align(
+                            alignment: const AlignmentDirectional(-1.0, 0.0),
+                            child: Text(
+                              'Bank Card',
+                              style: FlutterFlowTheme.of(context).displayLarge,
+                            ),
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Align(
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                child: Text(
+                                  'BankCardLarge',
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .override(
+                                        fontFamily: 'Nunito',
+                                        color: FlutterFlowTheme.of(context)
+                                            .typeMedium,
+                                      ),
+                                ),
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    child: wrapWithModel(
+                                      model: _model.bankCardLargeModel,
+                                      updateCallback: () => setState(() {}),
+                                      child: BankCardLargeWidget(
+                                        icon: Icon(
+                                          FFIcons.kicFluentHome16Regular,
+                                          color: FlutterFlowTheme.of(context)
+                                              .buttonColor,
+                                          size: 16.0,
+                                        ),
+                                        isLeftRow: false,
+                                        isRightRow: false,
+                                        isProgressBar: false,
+                                        rightText: 'dsdsd',
+                                        leftPrimText: 'dsds',
+                                        leftSecText: 'dssd',
+                                        labelText: 'Status',
+                                        textMeta: 'dsds',
+                                        imgePath: 'sdsds',
                                       ),
                                     ),
                                   ),
@@ -801,6 +879,17 @@ class _TestHomePageWidgetState extends State<TestHomePageWidget> {
                           ),
                         ].divide(const SizedBox(height: 32.0)),
                       ),
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  child: wrapWithModel(
+                    model: _model.bottomNavModel,
+                    updateCallback: () => setState(() {}),
+                    child: const BottomNavWidget(
+                      selectedPageIndex: 1,
+                      hiddenNav: false,
                     ),
                   ),
                 ),

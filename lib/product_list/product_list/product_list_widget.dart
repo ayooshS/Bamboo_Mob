@@ -52,6 +52,27 @@ class ProductListWidget extends StatefulWidget {
     Color? semanticColor,
     Color? semanticIconColor,
     bool? isLabelHeader,
+    bool? isSemantic,
+    bool? isMore,
+    bool? isHeaderIcon,
+    bool? isHeaderText,
+    bool? isSubText,
+    bool? isTrailingText,
+    bool? isPrimaryButton,
+    bool? isPrimaryButtonIcon,
+    bool? isDefaultButton,
+    bool? isDefaultButtonIcon,
+    bool? isTrailingMeta,
+    bool? isLabelElev1,
+    bool? isLabelElev2,
+    bool? isLabelElev3,
+    bool? isLabelDef1,
+    bool? isLabelDef2,
+    bool? isLabelDef3,
+    bool? isLabelshot,
+    bool? isFooter1,
+    bool? isFooter2,
+    bool? isFooter3,
   })  : headerText = headerText ?? 'Product name',
         colorLabelOverline = colorLabelOverline ?? const Color(0xFFEAEEF4),
         trailingMainText = trailingMainText ?? 'Quantity ',
@@ -59,7 +80,28 @@ class ProductListWidget extends StatefulWidget {
         labelShotColor = labelShotColor ?? const Color(0xFF00C356),
         semanticColor = semanticColor ?? const Color(0xFF00C356),
         semanticIconColor = semanticIconColor ?? const Color(0xFF00C356),
-        isLabelHeader = isLabelHeader ?? true;
+        isLabelHeader = isLabelHeader ?? true,
+        isSemantic = isSemantic ?? true,
+        isMore = isMore ?? true,
+        isHeaderIcon = isHeaderIcon ?? true,
+        isHeaderText = isHeaderText ?? true,
+        isSubText = isSubText ?? true,
+        isTrailingText = isTrailingText ?? true,
+        isPrimaryButton = isPrimaryButton ?? true,
+        isPrimaryButtonIcon = isPrimaryButtonIcon ?? true,
+        isDefaultButton = isDefaultButton ?? true,
+        isDefaultButtonIcon = isDefaultButtonIcon ?? true,
+        isTrailingMeta = isTrailingMeta ?? true,
+        isLabelElev1 = isLabelElev1 ?? true,
+        isLabelElev2 = isLabelElev2 ?? true,
+        isLabelElev3 = isLabelElev3 ?? true,
+        isLabelDef1 = isLabelDef1 ?? true,
+        isLabelDef2 = isLabelDef2 ?? true,
+        isLabelDef3 = isLabelDef3 ?? true,
+        isLabelshot = isLabelshot ?? true,
+        isFooter1 = isFooter1 ?? true,
+        isFooter2 = isFooter2 ?? true,
+        isFooter3 = isFooter3 ?? true;
 
   final Widget? iconLableOverline;
   final String headerText;
@@ -98,6 +140,27 @@ class ProductListWidget extends StatefulWidget {
   final Color semanticColor;
   final Color semanticIconColor;
   final bool isLabelHeader;
+  final bool isSemantic;
+  final bool isMore;
+  final bool isHeaderIcon;
+  final bool isHeaderText;
+  final bool isSubText;
+  final bool isTrailingText;
+  final bool isPrimaryButton;
+  final bool isPrimaryButtonIcon;
+  final bool isDefaultButton;
+  final bool isDefaultButtonIcon;
+  final bool isTrailingMeta;
+  final bool isLabelElev1;
+  final bool isLabelElev2;
+  final bool isLabelElev3;
+  final bool isLabelDef1;
+  final bool isLabelDef2;
+  final bool isLabelDef3;
+  final bool isLabelshot;
+  final bool isFooter1;
+  final bool isFooter2;
+  final bool isFooter3;
 
   @override
   State<ProductListWidget> createState() => _ProductListWidgetState();
@@ -139,6 +202,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
           children: [
             Row(
               mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 if (widget.isLabelHeader)
                   wrapWithModel(
@@ -150,56 +214,60 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                       color: widget.colorLabelOverline,
                     ),
                   ),
-                Flexible(
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        valueOrDefault<String>(
-                          widget.semanticText,
-                          'some2',
-                        ),
-                        style: FlutterFlowTheme.of(context).labelSmall.override(
-                              fontFamily: 'Nunito',
-                              color: widget.semanticColor,
-                            ),
-                      ),
-                      Align(
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
-                        child: FlutterFlowIconButton(
-                          borderColor: FlutterFlowTheme.of(context).transparent,
-                          borderRadius: 0.0,
-                          borderWidth: 0.0,
-                          buttonSize: 36.0,
-                          fillColor: FlutterFlowTheme.of(context).transparent,
-                          icon: Icon(
-                            Icons.arrow_forward_rounded,
-                            color: widget.semanticIconColor,
-                            size: 16.0,
+                if (widget.isSemantic)
+                  Flexible(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Text(
+                          valueOrDefault<String>(
+                            widget.semanticText,
+                            'some2',
                           ),
-                          onPressed: () {
-                            print('IconButton pressed ...');
-                          },
+                          style:
+                              FlutterFlowTheme.of(context).labelSmall.override(
+                                    fontFamily: 'Nunito',
+                                    color: widget.semanticColor,
+                                  ),
                         ),
-                      ),
-                    ],
+                        Align(
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          child: FlutterFlowIconButton(
+                            borderColor:
+                                FlutterFlowTheme.of(context).transparent,
+                            borderRadius: 0.0,
+                            borderWidth: 0.0,
+                            buttonSize: 36.0,
+                            fillColor: FlutterFlowTheme.of(context).transparent,
+                            icon: Icon(
+                              Icons.arrow_forward_rounded,
+                              color: widget.semanticIconColor,
+                              size: 16.0,
+                            ),
+                            onPressed: () {
+                              print('IconButton pressed ...');
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                FlutterFlowIconButton(
-                  borderColor: FlutterFlowTheme.of(context).transparent,
-                  borderRadius: 0.0,
-                  borderWidth: 0.0,
-                  buttonSize: 36.0,
-                  fillColor: FlutterFlowTheme.of(context).transparent,
-                  icon: Icon(
-                    Icons.keyboard_control,
-                    color: FlutterFlowTheme.of(context).typeHigh,
-                    size: 20.0,
+                if (widget.isMore)
+                  FlutterFlowIconButton(
+                    borderColor: FlutterFlowTheme.of(context).transparent,
+                    borderRadius: 0.0,
+                    borderWidth: 0.0,
+                    buttonSize: 36.0,
+                    fillColor: FlutterFlowTheme.of(context).transparent,
+                    icon: Icon(
+                      Icons.keyboard_control,
+                      color: FlutterFlowTheme.of(context).typeHigh,
+                      size: 20.0,
+                    ),
+                    onPressed: () {
+                      print('IconButton pressed ...');
+                    },
                   ),
-                  onPressed: () {
-                    print('IconButton pressed ...');
-                  },
-                ),
               ].divide(const SizedBox(width: 8.0)),
             ),
             Row(
@@ -222,7 +290,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    widget.headerIcon!,
+                                    if (widget.isHeaderIcon) widget.headerIcon!,
                                   ],
                                 ),
                                 Flexible(
@@ -235,34 +303,35 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Text(
-                                              widget.headerText,
-                                              maxLines: 1,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
-                                            ),
+                                            if (widget.isHeaderText)
+                                              Text(
+                                                widget.headerText,
+                                                maxLines: 1,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium,
+                                              ),
                                             Column(
                                               mainAxisSize: MainAxisSize.min,
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                                Text(
-                                                  valueOrDefault<String>(
-                                                    widget.subText,
-                                                    'Supporting Text',
+                                                if (widget.isSubText)
+                                                  Text(
+                                                    valueOrDefault<String>(
+                                                      widget.subText,
+                                                      'Supporting Text',
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily: 'Nunito',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .typeMedium,
+                                                        ),
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Nunito',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .typeMedium,
-                                                      ),
-                                                ),
                                                 Wrap(
                                                   spacing: 4.0,
                                                   runSpacing: 4.0,
@@ -280,102 +349,129 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                     Container(
                                                       decoration:
                                                           const BoxDecoration(),
-                                                      child: wrapWithModel(
-                                                        model: _model
-                                                            .elevatedModel2,
-                                                        updateCallback: () =>
-                                                            setState(() {}),
-                                                        child: ElevatedWidget(
-                                                          icon: widget
-                                                              .labelElevIcon1,
-                                                          labelText: widget
-                                                              .labelElevText1,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .elevation02,
+                                                      child: Visibility(
+                                                        visible:
+                                                            widget.isLabelElev1,
+                                                        child: wrapWithModel(
+                                                          model: _model
+                                                              .elevatedModel2,
+                                                          updateCallback: () =>
+                                                              setState(() {}),
+                                                          child: ElevatedWidget(
+                                                            icon: widget
+                                                                .labelElevIcon1,
+                                                            labelText: widget
+                                                                .labelElevText1,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .elevation02,
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
                                                     Container(
                                                       decoration:
                                                           const BoxDecoration(),
-                                                      child: wrapWithModel(
-                                                        model: _model
-                                                            .elevatedModel3,
-                                                        updateCallback: () =>
-                                                            setState(() {}),
-                                                        child: ElevatedWidget(
-                                                          icon: widget
-                                                              .labelElevIcon2,
-                                                          labelText: widget
-                                                              .labelElevText2,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .elevation02,
+                                                      child: Visibility(
+                                                        visible:
+                                                            widget.isLabelElev2,
+                                                        child: wrapWithModel(
+                                                          model: _model
+                                                              .elevatedModel3,
+                                                          updateCallback: () =>
+                                                              setState(() {}),
+                                                          child: ElevatedWidget(
+                                                            icon: widget
+                                                                .labelElevIcon2,
+                                                            labelText: widget
+                                                                .labelElevText2,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .elevation02,
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
                                                     Container(
                                                       decoration:
                                                           const BoxDecoration(),
-                                                      child: wrapWithModel(
-                                                        model: _model
-                                                            .elevated3Model,
-                                                        updateCallback: () =>
-                                                            setState(() {}),
-                                                        child: ElevatedWidget(
-                                                          icon: widget
-                                                              .labelElevIcon3,
-                                                          labelText: widget
-                                                              .labelElevText3,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .elevation02,
+                                                      child: Visibility(
+                                                        visible:
+                                                            widget.isLabelElev3,
+                                                        child: wrapWithModel(
+                                                          model: _model
+                                                              .elevated3Model,
+                                                          updateCallback: () =>
+                                                              setState(() {}),
+                                                          child: ElevatedWidget(
+                                                            icon: widget
+                                                                .labelElevIcon3,
+                                                            labelText: widget
+                                                                .labelElevText3,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .elevation02,
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
                                                     Container(
                                                       decoration:
                                                           const BoxDecoration(),
-                                                      child: wrapWithModel(
-                                                        model: _model.defModel1,
-                                                        updateCallback: () =>
-                                                            setState(() {}),
-                                                        child: DefWidget(
-                                                          icon: widget
-                                                              .labelDefIcon1,
-                                                          labelText: widget
-                                                              .labelDefText1,
+                                                      child: Visibility(
+                                                        visible:
+                                                            widget.isLabelDef1,
+                                                        child: wrapWithModel(
+                                                          model:
+                                                              _model.defModel1,
+                                                          updateCallback: () =>
+                                                              setState(() {}),
+                                                          child: DefWidget(
+                                                            icon: widget
+                                                                .labelDefIcon1,
+                                                            labelText: widget
+                                                                .labelDefText1,
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
                                                     Container(
                                                       decoration:
                                                           const BoxDecoration(),
-                                                      child: wrapWithModel(
-                                                        model: _model.def2Model,
-                                                        updateCallback: () =>
-                                                            setState(() {}),
-                                                        child: DefWidget(
-                                                          icon: widget
-                                                              .labelDefIcon2,
-                                                          labelText: widget
-                                                              .labelDefText2,
+                                                      child: Visibility(
+                                                        visible:
+                                                            widget.isLabelDef2,
+                                                        child: wrapWithModel(
+                                                          model:
+                                                              _model.def2Model,
+                                                          updateCallback: () =>
+                                                              setState(() {}),
+                                                          child: DefWidget(
+                                                            icon: widget
+                                                                .labelDefIcon2,
+                                                            labelText: widget
+                                                                .labelDefText2,
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
                                                     Container(
                                                       decoration:
                                                           const BoxDecoration(),
-                                                      child: wrapWithModel(
-                                                        model: _model.defModel2,
-                                                        updateCallback: () =>
-                                                            setState(() {}),
-                                                        child: DefWidget(
-                                                          icon: widget
-                                                              .labelDefIcon3,
-                                                          labelText: widget
-                                                              .labelDefText3,
+                                                      child: Visibility(
+                                                        visible:
+                                                            widget.isLabelDef3,
+                                                        child: wrapWithModel(
+                                                          model:
+                                                              _model.defModel2,
+                                                          updateCallback: () =>
+                                                              setState(() {}),
+                                                          child: DefWidget(
+                                                            icon: widget
+                                                                .labelDefIcon3,
+                                                            labelText: widget
+                                                                .labelDefText3,
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
@@ -399,44 +495,49 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          Text(
-                            widget.trailingMainText,
-                            style: FlutterFlowTheme.of(context).bodySmall,
-                          ),
-                          wrapWithModel(
-                            model: _model.primIconSmallModel,
-                            updateCallback: () => setState(() {}),
-                            child: PrimIconSmallWidget(
-                              buttonText: widget.primButtonText,
-                              icon: widget.primButtonIcon,
-                              isDisabled: false,
+                          if (widget.isTrailingText)
+                            Text(
+                              widget.trailingMainText,
+                              style: FlutterFlowTheme.of(context).bodySmall,
                             ),
-                          ),
-                          wrapWithModel(
-                            model: _model.primSmallModel,
-                            updateCallback: () => setState(() {}),
-                            child: PrimSmallWidget(
-                              buttonText: widget.primButtonText,
-                              isDisabled: false,
+                          if (widget.isPrimaryButtonIcon)
+                            wrapWithModel(
+                              model: _model.primIconSmallModel,
+                              updateCallback: () => setState(() {}),
+                              child: PrimIconSmallWidget(
+                                buttonText: widget.primButtonText,
+                                icon: widget.primButtonIcon,
+                                isDisabled: false,
+                              ),
                             ),
-                          ),
-                          wrapWithModel(
-                            model: _model.defIconSmallModel,
-                            updateCallback: () => setState(() {}),
-                            child: DefIconSmallWidget(
-                              buttonText: widget.defButtonText,
-                              icon: widget.defButtonIcon,
-                              isDisabled: false,
+                          if (widget.isPrimaryButton)
+                            wrapWithModel(
+                              model: _model.primSmallModel,
+                              updateCallback: () => setState(() {}),
+                              child: PrimSmallWidget(
+                                buttonText: widget.primButtonText,
+                                isDisabled: false,
+                              ),
                             ),
-                          ),
-                          wrapWithModel(
-                            model: _model.defSmallModel,
-                            updateCallback: () => setState(() {}),
-                            child: DefSmallWidget(
-                              buttonText: widget.defButtonText,
-                              isDisabled: false,
+                          if (widget.isDefaultButtonIcon)
+                            wrapWithModel(
+                              model: _model.defIconSmallModel,
+                              updateCallback: () => setState(() {}),
+                              child: DefIconSmallWidget(
+                                buttonText: widget.defButtonText,
+                                icon: widget.defButtonIcon,
+                                isDisabled: false,
+                              ),
                             ),
-                          ),
+                          if (widget.isDefaultButton)
+                            wrapWithModel(
+                              model: _model.defSmallModel,
+                              updateCallback: () => setState(() {}),
+                              child: DefSmallWidget(
+                                buttonText: widget.defButtonText,
+                                isDisabled: false,
+                              ),
+                            ),
                           Text(
                             valueOrDefault<String>(
                               widget.trailingMetaText,
@@ -460,62 +561,67 @@ class _ProductListWidgetState extends State<ProductListWidget> {
             Row(
               mainAxisSize: MainAxisSize.max,
               children: [
-                wrapWithModel(
-                  model: _model.labelShotSmallModel,
-                  updateCallback: () => setState(() {}),
-                  child: LabelShotSmallWidget(
-                    labelText: widget.labelShotText,
-                    color: widget.labelShotColor,
+                if (widget.isLabelshot)
+                  wrapWithModel(
+                    model: _model.labelShotSmallModel,
+                    updateCallback: () => setState(() {}),
+                    child: LabelShotSmallWidget(
+                      labelText: widget.labelShotText,
+                      colorLabel: widget.labelShotColor,
+                      colorText: FlutterFlowTheme.of(context).typeLow,
+                    ),
                   ),
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    widget.footerIcon1!,
-                    Text(
-                      valueOrDefault<String>(
-                        widget.footerText1,
-                        'some1',
+                if (widget.isFooter1)
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      widget.footerIcon1!,
+                      Text(
+                        valueOrDefault<String>(
+                          widget.footerText1,
+                          'some1',
+                        ),
+                        style: FlutterFlowTheme.of(context).labelSmall.override(
+                              fontFamily: 'Nunito',
+                              color: FlutterFlowTheme.of(context).typeLow,
+                            ),
                       ),
-                      style: FlutterFlowTheme.of(context).labelSmall.override(
-                            fontFamily: 'Nunito',
-                            color: FlutterFlowTheme.of(context).typeLow,
-                          ),
-                    ),
-                  ].divide(const SizedBox(width: 4.0)),
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    widget.footerIcon2!,
-                    Text(
-                      valueOrDefault<String>(
-                        widget.footerText2,
-                        'some2',
+                    ].divide(const SizedBox(width: 4.0)),
+                  ),
+                if (widget.isFooter2)
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      widget.footerIcon2!,
+                      Text(
+                        valueOrDefault<String>(
+                          widget.footerText2,
+                          'some2',
+                        ),
+                        style: FlutterFlowTheme.of(context).labelSmall.override(
+                              fontFamily: 'Nunito',
+                              color: FlutterFlowTheme.of(context).typeLow,
+                            ),
                       ),
-                      style: FlutterFlowTheme.of(context).labelSmall.override(
-                            fontFamily: 'Nunito',
-                            color: FlutterFlowTheme.of(context).typeLow,
-                          ),
-                    ),
-                  ].divide(const SizedBox(width: 4.0)),
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    widget.footerIcon3!,
-                    Text(
-                      valueOrDefault<String>(
-                        widget.footerText3,
-                        'some3',
+                    ].divide(const SizedBox(width: 4.0)),
+                  ),
+                if (widget.isFooter3)
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      widget.footerIcon3!,
+                      Text(
+                        valueOrDefault<String>(
+                          widget.footerText3,
+                          'some3',
+                        ),
+                        style: FlutterFlowTheme.of(context).labelSmall.override(
+                              fontFamily: 'Nunito',
+                              color: FlutterFlowTheme.of(context).typeLow,
+                            ),
                       ),
-                      style: FlutterFlowTheme.of(context).labelSmall.override(
-                            fontFamily: 'Nunito',
-                            color: FlutterFlowTheme.of(context).typeLow,
-                          ),
-                    ),
-                  ].divide(const SizedBox(width: 4.0)),
-                ),
+                    ].divide(const SizedBox(width: 4.0)),
+                  ),
               ].divide(const SizedBox(width: 4.0)),
             ),
           ].divide(const SizedBox(height: 8.0)),

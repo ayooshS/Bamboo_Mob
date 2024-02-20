@@ -10,10 +10,12 @@ class DefWidget extends StatefulWidget {
     super.key,
     this.icon,
     this.labelText,
-  });
+    bool? isIcon,
+  }) : isIcon = isIcon ?? true;
 
   final Widget? icon;
   final String? labelText;
+  final bool isIcon;
 
   @override
   State<DefWidget> createState() => _DefWidgetState();
@@ -63,16 +65,17 @@ class _DefWidgetState extends State<DefWidget> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
-                    child: wrapWithModel(
-                      model: _model.typeIconModel,
-                      updateCallback: () => setState(() {}),
-                      child: TypeIconWidget(
-                        icon: widget.icon!,
+                  if (widget.isIcon)
+                    Align(
+                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      child: wrapWithModel(
+                        model: _model.typeIconModel,
+                        updateCallback: () => setState(() {}),
+                        child: TypeIconWidget(
+                          icon: widget.icon!,
+                        ),
                       ),
                     ),
-                  ),
                   Text(
                     valueOrDefault<String>(
                       widget.labelText,

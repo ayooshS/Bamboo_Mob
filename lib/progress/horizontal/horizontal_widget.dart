@@ -14,6 +14,9 @@ class HorizontalWidget extends StatefulWidget {
     bool? isLeftRow,
     bool? isRightRow,
     this.icon,
+    this.rightTextColor,
+    this.leftTextPrimColor,
+    this.leftTextSecColor,
   })  : isLeftRow = isLeftRow ?? true,
         isRightRow = isRightRow ?? true;
 
@@ -23,6 +26,9 @@ class HorizontalWidget extends StatefulWidget {
   final bool isLeftRow;
   final bool isRightRow;
   final Widget? icon;
+  final Color? rightTextColor;
+  final Color? leftTextPrimColor;
+  final Color? leftTextSecColor;
 
   @override
   State<HorizontalWidget> createState() => _HorizontalWidgetState();
@@ -72,7 +78,10 @@ class _HorizontalWidgetState extends State<HorizontalWidget> {
                           widget.leftTextPrimary,
                           '75',
                         ),
-                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Nunito',
+                              color: widget.leftTextPrimColor,
+                            ),
                       ),
                       Text(
                         valueOrDefault<String>(
@@ -81,7 +90,7 @@ class _HorizontalWidgetState extends State<HorizontalWidget> {
                         ),
                         style: FlutterFlowTheme.of(context).labelSmall.override(
                               fontFamily: 'Nunito',
-                              color: FlutterFlowTheme.of(context).typeMedium,
+                              color: widget.leftTextSecColor,
                             ),
                       ),
                     ].divide(const SizedBox(width: 4.0)),
@@ -104,7 +113,7 @@ class _HorizontalWidgetState extends State<HorizontalWidget> {
                         ),
                         style: FlutterFlowTheme.of(context).labelSmall.override(
                               fontFamily: 'Nunito',
-                              color: FlutterFlowTheme.of(context).typeMedium,
+                              color: widget.rightTextColor,
                             ),
                       ),
                       widget.icon!,
@@ -126,7 +135,7 @@ class _HorizontalWidgetState extends State<HorizontalWidget> {
             padding: EdgeInsets.zero,
           ),
         ),
-      ],
+      ].divide(const SizedBox(height: 8.0)),
     );
   }
 }

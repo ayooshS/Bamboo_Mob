@@ -11,11 +11,14 @@ class ElevatedWidget extends StatefulWidget {
     this.icon,
     this.labelText,
     Color? color,
-  }) : color = color ?? const Color(0xFFEAEEF4);
+    bool? isIcon,
+  })  : color = color ?? const Color(0xFFEAEEF4),
+        isIcon = isIcon ?? true;
 
   final Widget? icon;
   final String? labelText;
   final Color color;
+  final bool isIcon;
 
   @override
   State<ElevatedWidget> createState() => _ElevatedWidgetState();
@@ -64,16 +67,17 @@ class _ElevatedWidgetState extends State<ElevatedWidget> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
-                    child: wrapWithModel(
-                      model: _model.typeIconModel,
-                      updateCallback: () => setState(() {}),
-                      child: TypeIconWidget(
-                        icon: widget.icon!,
+                  if (widget.isIcon)
+                    Align(
+                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      child: wrapWithModel(
+                        model: _model.typeIconModel,
+                        updateCallback: () => setState(() {}),
+                        child: TypeIconWidget(
+                          icon: widget.icon!,
+                        ),
                       ),
                     ),
-                  ),
                   Text(
                     valueOrDefault<String>(
                       widget.labelText,

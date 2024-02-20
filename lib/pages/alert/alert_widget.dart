@@ -49,21 +49,6 @@ class _AlertWidgetState extends State<AlertWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).btnColor,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
-          automaticallyImplyLeading: false,
-          title: Text(
-            'Alert',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Nunito',
-                  color: Colors.white,
-                  fontSize: 22.0,
-                ),
-          ),
-          actions: const [],
-          centerTitle: false,
-          elevation: 2.0,
-        ),
         body: SafeArea(
           top: true,
           child: Stack(

@@ -8,11 +8,13 @@ class LabelShotSmallWidget extends StatefulWidget {
   const LabelShotSmallWidget({
     super.key,
     this.labelText,
-    Color? color,
-  }) : color = color ?? const Color(0xFFEAEEF4);
+    Color? colorLabel,
+    required this.colorText,
+  }) : colorLabel = colorLabel ?? const Color(0xFFEAEEF4);
 
   final String? labelText;
-  final Color color;
+  final Color colorLabel;
+  final Color? colorText;
 
   @override
   State<LabelShotSmallWidget> createState() => _LabelShotSmallWidgetState();
@@ -61,7 +63,7 @@ class _LabelShotSmallWidgetState extends State<LabelShotSmallWidget> {
                   width: 8.0,
                   height: 8.0,
                   decoration: BoxDecoration(
-                    color: widget.color,
+                    color: widget.colorLabel,
                     borderRadius: BorderRadius.circular(100.0),
                     border: Border.all(
                       color: FlutterFlowTheme.of(context).buttonColor,
@@ -74,7 +76,10 @@ class _LabelShotSmallWidgetState extends State<LabelShotSmallWidget> {
                     widget.labelText,
                     'Label',
                   ),
-                  style: FlutterFlowTheme.of(context).labelSmall,
+                  style: FlutterFlowTheme.of(context).labelSmall.override(
+                        fontFamily: 'Nunito',
+                        color: widget.colorText,
+                      ),
                 ),
               ].divide(const SizedBox(width: 2.0)),
             ),

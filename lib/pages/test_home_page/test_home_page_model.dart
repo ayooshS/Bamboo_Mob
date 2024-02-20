@@ -26,7 +26,9 @@ import '/chips_labels/assistive/clickable/disabled/dsb_default/dsb_default_widge
 import '/chips_labels/assistive/clickable/disabled/dsb_elevated/dsb_elevated_widget.dart';
 import '/chips_labels/assistive/def/def_widget.dart';
 import '/chips_labels/assistive/elevated/elevated_widget.dart';
+import '/components/bank_card_large_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/navigation/bottom_nav/bottom_nav/bottom_nav_widget.dart';
 import '/product_list/product_list/product_list_widget.dart';
 import '/progress/horizontal/horizontal_widget.dart';
 import 'test_home_page_widget.dart' show TestHomePageWidget;
@@ -96,6 +98,10 @@ class TestHomePageModel extends FlutterFlowModel<TestHomePageWidget> {
   late HorizontalModel horizontalModel;
   // Model for ProductList component.
   late ProductListModel productListModel;
+  // Model for BankCardLarge component.
+  late BankCardLargeModel bankCardLargeModel;
+  // Model for BottomNav component.
+  late BottomNavModel bottomNavModel;
 
   /// Initialization and disposal methods.
 
@@ -131,6 +137,8 @@ class TestHomePageModel extends FlutterFlowModel<TestHomePageWidget> {
     dsbDefaultModel = createModel(context, () => DsbDefaultModel());
     horizontalModel = createModel(context, () => HorizontalModel());
     productListModel = createModel(context, () => ProductListModel());
+    bankCardLargeModel = createModel(context, () => BankCardLargeModel());
+    bottomNavModel = createModel(context, () => BottomNavModel());
   }
 
   @override
@@ -166,6 +174,8 @@ class TestHomePageModel extends FlutterFlowModel<TestHomePageWidget> {
     dsbDefaultModel.dispose();
     horizontalModel.dispose();
     productListModel.dispose();
+    bankCardLargeModel.dispose();
+    bottomNavModel.dispose();
   }
 
   /// Action blocks are added here.
